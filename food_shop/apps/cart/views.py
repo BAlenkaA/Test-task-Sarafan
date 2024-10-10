@@ -4,33 +4,9 @@ from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from .models import Category, Product, ShoppigCart
-from .serializers import (CategorySerializer, ListShopingCartSerializer,
-                          ProductSerializer)
-
-
-class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    ViewSet для просмотра категорий товаров.
-
-    Методы:
-    - list: Возвращает список всех категорий.
-    - retrieve: Возвращает детали определенной категории.
-    """
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
-
-
-class ProductViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    ViewSet для просмотра продуктов.
-
-    Методы:
-    - list: Возвращает список всех продуктов.
-    - retrieve: Возвращает детали определенного продукта.
-    """
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
+from ..products.models import Product
+from .models import ShoppigCart
+from .serializers import ListShopingCartSerializer
 
 
 class ShopingCartViewSet(viewsets.ModelViewSet):

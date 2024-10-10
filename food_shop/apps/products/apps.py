@@ -2,4 +2,5 @@ from django.apps import AppConfig
 
 
 class FoodShopApiConfig(AppConfig):
-    name = 'api'
+    name = 'apps.products'
+    verbose_name = 'Товары'

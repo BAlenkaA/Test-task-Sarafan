@@ -126,6 +126,6 @@ dmypy.json
 .pyre/
 
 # .idea
-.idea
+.idea/
 
 media/
